@@ -6,7 +6,7 @@
     const tweetDivided = document.getElementById('tweet-area');
 
     /**
-    * 指定した要素の子どもを全て除去する
+    * 指定した要素の子どもを全て削除する
     * @param {HTMLElement} element HTMLの要素
     */
     function removeAllChildren(element) {
@@ -32,23 +32,7 @@
         paragraph.innerText = result;
         resultDivided.appendChild(paragraph);
 
-        // ツイートエリアの作成
-        removeAllChildren(tweetDivided);
-        const anchor = document.createElement('a');
-        const hrefValue = 'https://twitter.com/intent/tweet?button_hashtag=%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E3%81%84%E3%81%84%E3%81%A8%E3%81%93%E3%82%8D&text='
-        + encodeURIComponent(result);
-        anchor.setAttribute('href', hrefValue);
-        anchor.className = 'twitter-hashtag-button';
-        anchor.innerText = 'Tweet #%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E3%81%84%E3%81%84%E3%81%A8%E3%81%93%E3%82%8D';
-        tweetDivided.appendChild(anchor);
-
-        twttr.widgets.load();
-    };
-
-    userNameInput.onkeydown = (event) => {
-        if (event.keyCode === 13) {
-            assessmentButton.onclick();
-        }
+        // TODO ツイートエリアの作成
     };
 
     const answers = [
@@ -100,3 +84,4 @@
         '入力が同じ名前なら同じ診断結果を出力する処理が正しくありません。'
     );
 })();
+
